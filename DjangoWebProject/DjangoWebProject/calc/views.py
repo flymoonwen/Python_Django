@@ -2,6 +2,8 @@
 from django.shortcuts import render
 from django.http import HttpResponse
 
+import time
+
 
 def add(request):
     a = request.GET['a']
@@ -11,3 +13,6 @@ def add(request):
 
 def home(request):
     return render(request, 'index.html')
+
+def doc(request):
+    return HttpResponse(str(time.time())) 
